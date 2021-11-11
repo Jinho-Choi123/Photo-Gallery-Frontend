@@ -7,7 +7,8 @@ const Button = styled.button`
     padding: 0.3rem 1rem;
     border-radius: 2rem;
     border: none;
-    margin-left: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     margin-top: 1rem;
     font-family: 'Roboto', sans-serif;
     background-color: ${props => props.transparent ? 'transparent': '#FFFFFF'};

@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Button from '../Button/Button';
+import Button from '../../atoms/Button/Button';
 
 const Stylenav = styled.nav`
-    float: right;
-    padding-right: 5rem;
+    width: 100%;
+    display: inline-block;
+    text-align: right;
 `;
 
 function Navbar() {
