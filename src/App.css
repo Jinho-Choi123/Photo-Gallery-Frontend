@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-image: url('./static/images/background.png');
+  height: 100vh;
 }
 
 .App-logo {
@@ -36,3 +38,5 @@
     transform: rotate(360deg);
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
