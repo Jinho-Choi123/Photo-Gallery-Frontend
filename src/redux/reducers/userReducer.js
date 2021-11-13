@@ -1,12 +1,27 @@
-import { REGISTER_USER, LOGIN_USER } from "../types";
+import { REGISTER_USER, LOGIN_USER, LOGOUT_USER } from "../types";
 
-export default (state = {}, action) => {
+const userReducer =  (state = {}, action) => {
     switch (action.type) {
         case REGISTER_USER:
-            return { ...state, register: action.payload };
+            return { ...state, 
+            };
         case LOGIN_USER:
-            return { ...state, login: action.payload };
+            return { ...state, 
+                username: action.payload.username, 
+                accesstoken: action.payload.accesstoken,
+                refreshtoken: action.payload.refreshtoken,
+                login: true,
+            };
+        case LOGOUT_USER:
+            return { ...state, logout: action.payload,
+                username: "",
+                accesstoken: "",
+                refreshtoken: "",
+                login: false,
+             };
         default:
             return state;
     }
 };
+
+export default userReducer;
