@@ -8,7 +8,7 @@ const Styleimg = styled.img`
 `;
 
 
-function Homepage() {
+function Home() {
   return (
     <div>
         <Navbar />
@@ -17,4 +17,4 @@ function Homepage() {
     </div>
     );
 }
-export default Homepage;
+export default Home;
