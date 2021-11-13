@@ -23,7 +23,13 @@ const Login = (props) => {
             password: password,
         }
 
-        dispatch(login())
+        dispatch(loginAction(user))
+            .then((res) => {
+                console.log(res);
+                if(res.status === 200) {
+                    props.history.push('/');
+                }
+            })
     }
 
 }
