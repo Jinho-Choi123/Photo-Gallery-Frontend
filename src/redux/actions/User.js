@@ -6,11 +6,16 @@ const USER_URL = "/auth";
 
 //Action Creator
 export const loginAction = (user) => {
-    const data = request("post", USER_URL + "/token/", user);
-    return {
-        type: LOGIN_USER,
-        payload: data
-    };
+    return (
+        async (dispatch) => {
+            request('post', USER_URL + "/login/", user)
+                .then(response => {
+                    dispatch({
+                        type: LOGIN_USER,
+                        payload: response.data
+                    })
+                })
+        })
 };
 
 export const registerAction = (user) => {

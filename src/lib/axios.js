@@ -1,20 +1,14 @@
 import axios from 'axios';
 
-const Domain = 'http://localhost:8000/';
-
-axios.defaults.withCredentials = true;
+const Domain = 'http://127.0.0.1:8000';
 
 const request = (method, url, data) => {
-    axios({
-        method,
+    return axios({
+        method: method,
         url: Domain + url,
         data: data
-    })
-    .then((res) => {return res.data})
-    .catch((err) => {
-        //Handle Error
-        return console.log(err)
-    })
+    }, {withCredentials: true})
+
 }
 
 export default request;

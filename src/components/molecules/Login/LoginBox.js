@@ -18,14 +18,12 @@ const LoginBox = (props) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        const user = {
-            username: username,
-            password: password,
-        }
+        let user = new FormData();
+        user.append('username', username);
+        user.append('password', password);
 
         dispatch(loginAction(user))
             .then((res) => {
-                console.log(res);
                 if(res.status === 200) {
                     props.history.push('/');
                 }

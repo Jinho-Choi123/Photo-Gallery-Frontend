@@ -1,19 +1,18 @@
 import { REGISTER_USER, LOGIN_USER, LOGOUT_USER } from "../types";
 
 const userReducer =  (state = {}, action) => {
+    console.log(action.payload)
     switch (action.type) {
         case REGISTER_USER:
             return { ...state, 
             };
         case LOGIN_USER:
             return { ...state, 
-                username: action.payload.username, 
-                accesstoken: action.payload.accesstoken,
-                refreshtoken: action.payload.refreshtoken,
+                ...action.payload,
                 login: true,
             };
         case LOGOUT_USER:
-            return { ...state, logout: action.payload,
+            return { ...state,
                 username: "",
                 accesstoken: "",
                 refreshtoken: "",
